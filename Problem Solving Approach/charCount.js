@@ -16,6 +16,7 @@ function charCount(str) {
   // return the object
 }
 
+// Solve
 function charCount(str) {
   const result = {};
 
@@ -28,6 +29,24 @@ function charCount(str) {
       } else {
         result[char] = 1;
       }
+    }
+  }
+
+  return result;
+}
+
+// Refactor
+
+import isAlphaNumeric from "./isAlphaNumberic";
+
+function charCount(str) {
+  const result = {};
+
+  for (let char of str) {
+    char = char.toLowerCase();
+
+    if (isAlphaNumeric(char)) {
+      result[char] = ++result[char] || 1;
     }
   }
 
